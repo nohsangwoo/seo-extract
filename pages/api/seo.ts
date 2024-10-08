@@ -46,6 +46,22 @@ export default async function handler(
       return `${h1Text} ${h2Text}`.trim()
     }
 
+    const extractStructuredData = (): string => {
+      const structuredData = $('script[type="application/ld+json"]').html()
+      return structuredData ? structuredData.trim() : ''
+    }
+
+    const extractHreflang = (): string[] => {
+      return $('link[rel="alternate"][hreflang]')
+        .map((_, el) => $(el).attr('hreflang'))
+        .get()
+        .filter(lang => lang)
+    }
+
+    const extractTwitterMeta = (name: string): string => {
+      return extractMetaContent(`twitter:${name}`)
+    }
+
     const seoInfo = {
       title: $('title').text(),
       description: extractMetaContent('description'),
@@ -53,9 +69,14 @@ export default async function handler(
       ogTitle: extractMetaContent('og:title'),
       ogDescription: extractMetaContent('og:description'),
       ogImage: extractMetaContent('og:image'),
+      twitterTitle: extractTwitterMeta('title'),
+      twitterDescription: extractTwitterMeta('description'),
+      twitterImage: extractTwitterMeta('image'),
       canonical: $('link[rel="canonical"]').attr('href') || '',
       robots: extractMetaContent('robots'),
       viewport: extractMetaContent('viewport'),
+      structuredData: extractStructuredData(),
+      hreflang: extractHreflang(),
     }
 
     res.status(200).json(seoInfo)

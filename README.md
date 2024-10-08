@@ -1,6 +1,6 @@
-# keyword-extraction
+# seo-extract
 
-This is a simple keyword extraction tool that uses the RAKE algorithm to extract keywords from a given text.
+A powerful and user-friendly tool for extracting and analyzing SEO metadata from websites. Simply input a URL to instantly retrieve key SEO elements including title, description, keywords, Open Graph tags, and more. Built with Next.js for efficient server-side rendering and API functionality.
 
 ## Usage
 
