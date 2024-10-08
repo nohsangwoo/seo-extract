@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: "Extract crucial SEO data from any website in seconds. Improve your site's search engine performance.",
     images: [
       {
-        url: "https://seo-extractor.example.com/logo.webp",
+        url: "https://getseo.ludgi.ai/logo.webp",
         width: 1200,
         height: 630,
         alt: "SEO Info Extractor Tool",
