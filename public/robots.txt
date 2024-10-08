@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /private/
+
+# Host
+Host: https://getseo.ludgi.ai
+
+# Sitemaps
+Sitemap: https://getseo.ludgi.ai/sitemap.xml

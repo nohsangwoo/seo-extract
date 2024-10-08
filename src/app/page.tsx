@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect } from "react";
+import DisplayLudgi from "./components/DisplayLudgi";
 
 export default function Home() {
   const [init, setInit] = useState(false);
@@ -122,6 +123,7 @@ export default function Home() {
             </div>
           </motion.div>
         )}
+        <DisplayLudgi />
       </div>
     </div>
   );
